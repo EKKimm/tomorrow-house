@@ -1,0 +1,43 @@
+.lnb {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &-list {
+    //첫번째 방법(width를 가변적으로 적용하는 방법)
+    //@include flexbox(start);
+    //width: max-content;
+
+    //두번째 방법(width를 가변적으로 적용하는 방법)
+    @include inline-flexbox(start);
+    position: relative;
+    left: -8px;
+    white-space: nowrap;
+  }
+
+  &-item {
+    //flex-shrink: 0;
+
+    &.is-active {
+      a {
+        color: $blue;
+        border-bottom: 2px solid $blue;
+      }
+    }
+
+    a {
+      @include inline-flexbox;
+      @include text-style(13, $dark);
+      height: 40px;
+      padding: 0 8px;
+      font-weight: 700;
+    }
+
+    .ic-new {
+      font-size: 16px;
+      color: $red;
+    }
+  }
+}
