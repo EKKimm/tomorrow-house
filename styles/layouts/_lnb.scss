@@ -3,10 +3,7 @@
   $grid-margin: $sm-margin + $gutter / 2;
 
   overflow-x: auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  @include no-scrollbar;
 
   &-list {
     //첫번째 방법(width를 가변적으로 적용하는 방법)
